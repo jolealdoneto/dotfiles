@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/root/ISITO/plugins'
+let g:netrw_dirhist_2='/root'
+let g:netrw_dirhist_3='/root/prj/ISITO/grails-app/jobs'
+let g:netrw_dirhist_4='/root/prj/ISITO'
+let g:netrw_dirhist_5='/root/.grails/1.1.1/projects/ISITO/plugins'
+let g:netrw_dirhist_6='/home/leal/proj/sulzer/ISITO/ISITO/plugins'
+let g:netrw_dirhist_7='/home/leal/.vim/ftdetect'
