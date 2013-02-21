@@ -1,6 +1,8 @@
 syntax on
 filetype plugin indent on
 
+call pathogen#infect()
+
 set number
 " Annotate  for svn
 vmap gf :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
@@ -47,7 +49,7 @@ vmap gf :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR
  set mat=2
 
 
- colorscheme desert
+ colorscheme wombat256
  set background=dark
  " Set utf8 as standard encoding and en_US as the standard language
  set encoding=utf8
@@ -147,3 +149,18 @@ function! CmdLine(str)
 																														    let @/ = l:pattern
 																															    let @" = l:saved_reg
 																														endfunction
+if $COLORTERM == 'gnome-terminal'
+  set t_Co=256
+endif
+
+set laststatus=2
+" When writing a file, if there are errors, have Syntastic plugin mark them
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=1
+
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+set runtimepath^=~/.vim/bundle/colorschemes
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
