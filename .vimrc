@@ -164,3 +164,5 @@ set runtimepath^=~/.vim/bundle/colorschemes
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:Powerline_symbols = 'fancy'
+set guifont=Ubuntu\ Mono\ for\ Powerline\ 12
