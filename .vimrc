@@ -124,31 +124,32 @@ map <F5> :call DoTitle()<CR>
 
 
 function! CmdLine(str)
-		    exe "menu Foo.Bar :" . a:str
-			    emenu Foo.Bar
-				    unmenu Foo
-			endfunction
+    exe "menu Foo.Bar :" . a:str
+    emenu Foo.Bar
+    unmenu Foo
+endfunction
 
-			function! VisualSelection(direction) range
-					    let l:saved_reg = @"
-						    execute "normal! vgvy"
+function! VisualSelection(direction) range
+    let l:saved_reg = @"
+    execute "normal! vgvy"
 
-							    let l:pattern = escape(@", '\\/.*$^~[]')
-								    let l:pattern = substitute(l:pattern, "\n$", "", "")
+    let l:pattern = escape(@", '\\/.*$^~[]')
+    let l:pattern = substitute(l:pattern, "\n$", "", "")
 
-									    if a:direction == 'b'
-												        execute "normal ?" . l:pattern . "^M"
-														    elseif a:direction == 'gv'
-																	        call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
-																			    elseif a:direction == 'replace'
-																						        call CmdLine("%s" . '/'. l:pattern . '/')
-																								    elseif a:direction == 'f'
-																											        execute "normal /" . l:pattern . "^M"
-																													    endif
+    if a:direction == 'b'
+    execute "normal ?" . l:pattern . "^M"
+    elseif a:direction == 'gv'
+    call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
+    elseif a:direction == 'replace'
+    call CmdLine("%s" . '/'. l:pattern . '/')
+    elseif a:direction == 'f'
+    execute "normal /" . l:pattern . "^M"
+    endif
 
-																														    let @/ = l:pattern
-																															    let @" = l:saved_reg
-																														endfunction
+    let @/ = l:pattern
+    let @" = l:saved_reg
+endfunction
+
 if $COLORTERM == 'gnome-terminal'
   set t_Co=256
 endif
@@ -161,8 +162,12 @@ let g:syntastic_auto_loc_list=1
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set runtimepath^=~/.vim/bundle/colorschemes
 
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class     " Linux/MacOSX
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|node_modules)$'
 let g:Powerline_symbols = 'fancy'
 set guifont=Ubuntu\ Mono\ for\ Powerline\ 12
+
+let g:user_zen_expandabbr_key = '<c-g>'
+let g:use_zen_complete_tag = 1
