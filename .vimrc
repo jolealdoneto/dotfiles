@@ -165,9 +165,11 @@ set runtimepath^=~/.vim/bundle/colorschemes
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class     " Linux/MacOSX
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|node_modules)$'
+let g:ctrlp_custom_ignore = '\v[\/]\.?(git|hg|svn|node_modules|build)$'
 let g:Powerline_symbols = 'fancy'
 set guifont=Ubuntu\ Mono\ for\ Powerline\ 12
 
 let g:user_zen_expandabbr_key = '<c-g>'
 let g:use_zen_complete_tag = 1
+set ssop-=options    " do not store global and local values in a session
+set ssop-=folds      " do not store folds
