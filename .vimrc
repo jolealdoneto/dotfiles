@@ -173,3 +173,17 @@ let g:user_zen_expandabbr_key = '<c-g>'
 let g:use_zen_complete_tag = 1
 set ssop-=options    " do not store global and local values in a session
 set ssop-=folds      " do not store folds
+
+autocmd FocusLost * :set number
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
+autocmd CursorMoved * :set relativenumber
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <C-n> :call NumberToggle()<cr>
