@@ -77,16 +77,4 @@ bindkey -M vicmd '^F' resumejob
 
 . /usr/share/autojump/autojump.sh
 
-
-android_trigger_remote() {
-    read 'usern?username: '
-    read -s 'pw?password: '
-
-    curl -i -u "$usern:$pw" "https://ci.tado.com/job/PhonegapAndroid%20-%20Deploy/buildWithParameters?token=c191a406448d80e20b94e5302fe4e16922c9270c1cd43a98d32d7c9326d70428&HTML5APP_REMOTE=$1&HTML5APP_BRANCH=$2&ANDROID_REMOTE=$3&ANDROID_BRANCH=$4" --insecure;
-}
-ios_trigger_remote() {
-    read 'usern?username: '
-    read -s 'pw?password: '
-
-    curl -i -u "$usern:$pw" "https://ci.tado.com/job/PhonegapIOS%20-%20Deploy/buildWithParameters?token=PhonegapIOSBuild&HTML5APP_REMOTE=$1&HTML5APP_BRANCH=$2&IOS_REMOTE=$3&IOS_BRANCH=$4&MANGLE=true" --insecure;
-}
+source $HOME/.zshrc-functions
