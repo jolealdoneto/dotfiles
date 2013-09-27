@@ -38,7 +38,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export ANDROID='/home/neto/adt-bundle-linux-x86_64/sdk'
-export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/neto/bin:/home/neto/grails-2.2.1/bin:$ANDROID/tools:$ANDROID/platform-tools
+export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$ANDROID/tools:$ANDROID/platform-tools
 
 alias tado='cd /home/neto/prj/personal/tado/'
 alias tadoo='cd /home/neto/prj/personal/tado/txt/organize'
@@ -51,15 +51,19 @@ alias la='ls -A'
 alias l='ls -CF'
 alias adb='$ANDROID/platform-tools/adb'
 
+export EBPC="EnergyBob/PhonegapCommon"
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alert() {
     notify-send $@
 }
 
-export JAVA_HOME='/usr/lib/jvm/java-1.7.0-openjdk-amd64'
-alias grails='/home/neto/grails-2.2.1/bin/grails'
+export JAVA_HOME='/usr/lib/jvm/java-1.6.0-openjdk-amd64'
 export GROOVY_HOME='/usr/share/groovy'
+#export GRAILS_HOME='/home/neto/grails-2.2.3'
+export AA_PATH='html5app/app'
+export ANDROID_HOME='/home/neto/adt-bundle-linux-x86_64/sdk'
 
 bindkey -M vicmd '^R' history-incremental-search-backward
 autoload -U edit-command-line
@@ -77,4 +81,8 @@ bindkey -M vicmd '^F' resumejob
 
 . /usr/share/autojump/autojump.sh
 
+setopt interactivecomments
 source $HOME/.zshrc-functions
+
+#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "/home/neto/.gvm/bin/gvm-init.sh" ]] && source "/home/neto/.gvm/bin/gvm-init.sh"

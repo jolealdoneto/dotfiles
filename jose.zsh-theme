@@ -6,8 +6,8 @@ function collapse_pwd {
 }
 setopt promptsubst
 
-ZSH_THEME_VI_MODE_COMMAND="%{$fg_bold[magenta]%}<#%{$reset_color%}"
-ZSH_THEME_VI_MODE_INSERT="%{$fg_bold[green]%}$>%{$reset_color%}"
+ZSH_THEME_VI_MODE_COMMAND="%{$fg_bold[magenta]%}<λ%{$reset_color%}"
+ZSH_THEME_VI_MODE_INSERT="%{$fg_bold[green]%}λ>%{$reset_color%}"
 
 vi_mode_prompt_info () {
   if [[ ${KEYMAP} = 'vicmd' ]]
