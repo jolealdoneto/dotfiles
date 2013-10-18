@@ -51,6 +51,8 @@ alias la='ls -A'
 alias l='ls -CF'
 alias adb='$ANDROID/platform-tools/adb'
 
+alias gtool='node ~/prj/gittool/gittool.js ~/.config/gittool.json'
+
 export EBPC="EnergyBob/PhonegapCommon"
 
 # Add an "alert" alias for long running commands.  Use like so:
