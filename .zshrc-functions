@@ -1,0 +1,3 @@
+svnst() {
+    svn st | grep $@ | cut -d' ' -f8-
+}
